@@ -94,6 +94,16 @@
             fillSlot(slotUno, gamblingReels);
             fillSlot(slotDos, gamblingReels);
             fillSlot(slotTres, gamblingReels);
+      
+            // Recoger los resultados de los tres slots
+            const results = [
+              slotUno.querySelector(".slot-item").textContent,
+              slotDos.querySelector(".slot-item").textContent,
+              slotTres.querySelector(".slot-item").textContent,
+            ];
+      
+            // Llamar a la función checkWin con los resultados
+            checkWin(results);
           }
         }
         // Función para verificar si se ganó
@@ -110,7 +120,10 @@
         }
 
         // Asociar el evento de giro a un botón de apostar
+        // usa checkWin para verificar si se ganó
+
         document
           .querySelector(".container-apostar-class")
           .addEventListener("click", initSlots);
+
       })();
